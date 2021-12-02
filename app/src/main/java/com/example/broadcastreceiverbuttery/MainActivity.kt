@@ -21,8 +21,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val  battery = findViewById<AppCompatTextView>(R.id.battery_state)
+        val batteryNum = findViewById<AppCompatTextView>(R.id.lowOrNormal)
 
-        myBatteryReceiver = MyReceiver(battery)
+        myBatteryReceiver = MyReceiver(battery , batteryNum )
+
 
         registerReceiver(myBatteryReceiver , IntentFilter(Intent.ACTION_BATTERY_CHANGED))
 
